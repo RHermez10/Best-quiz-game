@@ -8,10 +8,9 @@ public class QuizGame {
 
         System.out.println("Welcome to the Quiz game!\n");
         System.out.println(
-                "You will get to choose between a specific category or choose all categories.\nIn each category you will get 3 multiple-choice questions. Each question has 3 alternatives; only 1 of them is correct.\nAnswer by typing a,b or c.\nIf your answer is correct you will get 1 point. The goal is to collect as many points as you can.");
+                "You will get to choose between a specific category or choose all categories.\nIn each category you will get 3 multiple-choice questions. Each question has 3 alternatives; only 1 of them is correct.\nAnswer by typing 1,2 or 3.\nIf your answer is correct you will get 1 point. The goal is to collect as many points as you can.");
 
         System.out.println("Enter your name to get started!");
-        // Player player = new player(scanner.nextLine()
 
         System.out.println("Welcome! Choose a category or play all categories.");
 
