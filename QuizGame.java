@@ -1,8 +1,30 @@
 import java.util.Scanner;
 
 public class QuizGame {
-
     public static void main(String[] args) {
+
+        Question[] sport = {
+                new Question(Category.SPORT, "Vilket land vann VM 2026?",
+                        new String[] { "Argentina", "Spanien", "Brasilien" }, "Spanien"),
+
+                new Question(Category.SPORT, "Vilket landslag spelar Messi?",
+                        new String[] { "Sverige", "Italien", "Argnetina" }, "Argentina"),
+
+                new Question(Category.SPORT, "I vilken sport använder man en puck?",
+                        new String[] { "Handboll", "Tennis", "Ishockey" }, "Ishockey")
+        };
+
+        Question[] geography = {
+                new Question(Category.GEOGRAPHY, "Vilket är världens största land till ytan?",
+                        new String[] { "Ryssland", "Kina", "USA" }, "Ryssland"),
+
+                new Question(Category.GEOGRAPHY, "Vad heter huvudstaden i Australien?",
+                        new String[] { "Sydney", "Canberra", "Perth" }, "Canberra"),
+
+                new Question(Category.GEOGRAPHY,
+                        "Vilken flod är längst i världen enligt det vanligaste geografiska mättningen?",
+                        new String[] { "Nilen", "Amazonas", "Mississipippi" }, "Nilen")
+        };
 
         Scanner scanner = new Scanner(System.in);
 
@@ -12,7 +34,9 @@ public class QuizGame {
 
         System.out.println("Enter your name to get started!");
 
-        System.out.println("Welcome! Choose a category or play all categories.");
+        Player player = new Player(scanner.nextLine());
+
+        System.out.println("Welcome " + player.getName() + " Choose a category or play all categories.");
 
         System.out.println("1. Sport");
         System.out.println("2. Geography");
@@ -20,16 +44,28 @@ public class QuizGame {
 
         int choosenCategory = scanner.nextInt();
 
-        /*
-         * - Här ska vi baserat på vilken category som spelaren valde visa en fråga i
-         * i taget.
-         * - Låta användaren skriva sitt svar (a,b eller c ) innan nästa fråga visas.
-         * - Detta upprepas tills spelaren har svarat på alla frågor i den valde
-         * kategorin
-         */
+        switch (choosenCategory) {
+            case 1:
+                for (Question sportQuestion : sport) {
+                    System.out.println(sportQuestion.getQuestionText());
+                    for (int i = 0; i < sportQuestion.getAnswers().length; i++) {
+                        System.out.println((i + 1) + " " + sportQuestion.getAnswers()[i]);
+                    }
+                    int playersAnswer = scanner.nextInt();
+                }
 
-        // if sats
-        // Kontrollera om användaren svarade rätt och de får poäng.
+                break;
+            case 2:
+                for (Question geographyQuestion : geography) {
+
+                    System.out.println(geographyQuestion.getQuestionText());
+                }
+                break;
+            case 3:
+                break;
+            default:
+                ;
+        }
 
         // När spelet är slut visa resultat
         System.out.println("Game finished");

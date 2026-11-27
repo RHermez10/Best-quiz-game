@@ -1,13 +1,11 @@
-
 public class Question {
 
-    private String category;
+    private Category category;
     private String questionText;
     private String[] answers;
-    private int correctAnswer;
+    private String correctAnswer;
 
-    
-    public Question(String category, String questionText, String[] answers, int correctAnswer) {
+    public Question(Category category, String questionText, String[] answers, String correctAnswer) {
 
         this.category = category; // Sport eller Geografi
         this.questionText = questionText;
@@ -15,9 +13,8 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-    
-    public String getCategory() {
-        
+    public Category getCategory() {
+
         return category;
     }
 
@@ -28,24 +25,22 @@ public class Question {
     }
 
     public String[] getAnswers() {
-
         return answers;
-
     }
 
-    public int getCorrectAnswer() {
+    public String getCorrectAnswer() {
 
         return correctAnswer;
 
     }
 
-    public boolean isCorrect(int selectedAnswer) {
+    // public boolean isCorrect(int selectedAnswer) {
 
-        if (selectedAnswer == correctAnswer){
-            return true;
-        }
-            return false;
-        
-    }
+    // if (selectedAnswer == correctAnswer) {
+    // return true;
+    // }
+    // return false;
+
+    // }
 
 }
